@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:QKRCLDNQKR</property>
+        <property name="hibernate.connection.username">CHIWOO</property>
+        <property name="hibernate.connection.password">CHIWOO</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
+        <!-- C3PO 연결 풀 공급자를 사용  --> 
+        <property name="hibernate.c3p0.min_size">5</property> 
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">50</property> 
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+        
+        <!-- SQL을 보기 좋은 형태로 표준출력 --> 
+        <property name="show_sql">true</property>  
+        <property name="format_sql">true</property>
+        <property name="hbm2ddl.auto">create-drop</property> 
+        
+        <!-- XML 매핑 파일 목록 --> 
+        <mapping resource="chiwoo/User.hbm.xml"/> 
+    </session-factory>
+</hibernate-configuration>
